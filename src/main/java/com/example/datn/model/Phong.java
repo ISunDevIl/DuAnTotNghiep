@@ -6,39 +6,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "KhachHang")
-public class KhachHang {
 
+@Entity
+@Table(name = "phong")
+
+public class Phong {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "ho_ten")
-    private String hoTen;
+    @Column(name = "ma_phong")
+    private String maPhong;
 
-    @Column(name = "ngay_sinh")
-    private LocalDate ngaySinh;
+    @Column(name = "ten_phong")
+    private String tenPhong;
 
-    @Column(name = "gioi_tinh")
-    private String gioiTinh;
-
-    @Column(name = "dia_chi")
-    private String diaChi;
-
-    @Column(name = "sdt")
-    private String sdt;
-
-    @Column(name = "email")
-    private String email;
+    @Column(name = "hinh_anh")
+    private String hinhAnh;
 
     @Column(name = "ngay_tao")
     private LocalDateTime ngayTao;
@@ -48,4 +37,7 @@ public class KhachHang {
 
     @Column(name = "trang_thai")
     private String trangThai;
+
+    @Column(name = "tinh_trang")
+    private String tinhTrang;
 }
