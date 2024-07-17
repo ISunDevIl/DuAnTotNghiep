@@ -24,6 +24,29 @@
     </div>
 
     <div class="mb-3">
+        <label for="hinhAnh">Chọn hình ảnh:</label>
+        <input type="file" class="form-control" name="hinhAnh" id="hinhAnh" accept="image/*">
+    </div>
+    <div id="preview">
+        <p>Ảnh đã chọn:</p>
+        <img id="selectedImage" style="display: none; max-width: 100%;">
+    </div>
+
+    <script>
+        document.getElementById('hinhAnh').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Tạo URL tạm thời cho tệp ảnh đã chọn
+                const filePath = URL.createObjectURL(file);
+
+                // Hiển thị ảnh đã chọn
+                const imgElement = document.getElementById('selectedImage');
+                imgElement.src = filePath;
+                imgElement.style.display = 'block';
+            }
+        });
+    </script>
+    <div class="mb-3">
         <label >Mô tả:</label>
         <input type="text"  class="form-control" name="moTa">
     </div>
@@ -57,7 +80,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${listDichVu}" var="s" varStatus="i">
+    <c:forEach items="${list}" var="s" varStatus="i">
         <tr>
             <td>${i.index+1}</td>
             <td>${s.id}</td>
