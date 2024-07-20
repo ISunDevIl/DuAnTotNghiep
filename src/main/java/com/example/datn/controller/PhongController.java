@@ -43,11 +43,7 @@ public class PhongController {
 //        model.addAttribute("TienNghi",phongService.detail(id));
 //        return "TienNghi/home";
 //    }
-    @GetMapping("/delete")
-    public String dedlete(@RequestParam("id") int id){
-        phongService.delete(id);
-        return "redirect:/phong/home";
-    }
+
 
     @PostMapping("/update")
     public String update(Phong phong){
