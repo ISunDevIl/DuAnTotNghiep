@@ -24,6 +24,7 @@ public class NhanVien {
 
     @Column(name = "ma_nhan_vien")
     private String maNhanVien;
+
     @Column(name = "ho_ten")
     private String hoTen;
 

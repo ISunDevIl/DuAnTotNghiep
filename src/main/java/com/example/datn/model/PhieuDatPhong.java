@@ -38,7 +38,6 @@ public class PhieuDatPhong {
     @Column(name = "thoi_gian_ra_du_kien")
     private LocalDateTime thoiGianRaDuKien;
 
-
     @Column(name = "so_nguoi")
     private Integer soNguoi;
     @Column(name = "so_phong")
