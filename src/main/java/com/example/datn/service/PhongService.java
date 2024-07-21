@@ -20,5 +20,7 @@ public interface PhongService {
 
     public void update(Phong phong);
 
+    public List<Phong> findByLoaiPhong(Integer id);
+
 
 }

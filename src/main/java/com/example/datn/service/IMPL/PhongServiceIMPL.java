@@ -38,7 +38,10 @@ public class PhongServiceIMPL implements PhongService {
         phongRepo.save(phong);
 
     }
-//
+
+
+
+    //
 //    @Override
 //    public void updateStatusPhong(Integer id) {
 //        Phong phong = phongRepo.findById(id).orElse(null);
@@ -64,5 +67,9 @@ public class PhongServiceIMPL implements PhongService {
             phongRepo.save(phong);
         }
 
+    }
+    @Override
+    public List<Phong> findByLoaiPhong(Integer id) {
+        return phongRepo.findPhongsByLoaiPhong_Id(id);
     }
 }
