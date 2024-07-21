@@ -92,8 +92,7 @@
             <td>${s.trangThai}</td>
             <td>${s.tinhTrang}</td>
             <td>
-                <a href="/tien-nghi/delete?id=${s.id}" class="btn btn-danger">Xóa</a>
-                <a href="/tien-nghi/update-status?id=${s.id}" class="btn btn-warning">Ngưng hoạt động</a>
+                <a href="/phong/update-status?id=${s.id}" class="btn btn-warning">Đổi trạng thái hoạt động</a>
             </td>
         </tr>
     </c:forEach>
@@ -166,6 +165,7 @@
 
                 <br>
                 <button type="submit" class="btn btn-success">Lưu</button>
+                <a class="btn btn-success" onclick="resetmodal()">Thêm mới</a>
             </form>
         </form>
 
@@ -244,6 +244,11 @@
         }
 
     });
+
+    function resetmodal(){
+        modalForm.reset();
+        carouselInner.innerHTML = '';
+    }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
