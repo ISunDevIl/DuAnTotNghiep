@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/dich_vu")
 public class DichVuController {
 
@@ -19,9 +19,8 @@ public class DichVuController {
     DichVuServiceIMPL dichVuServiceIMPL;
 
     @GetMapping("/home")
-    public String home(Model model){
-        model.addAttribute("list",dichVuServiceIMPL.getAll());
-        return "/DichVu/home";
+    public List<DichVu> home(){
+        return dichVuServiceIMPL.getAll();
     }
 
 

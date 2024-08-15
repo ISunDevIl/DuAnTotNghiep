@@ -10,16 +10,14 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Controller
+@RestController
 public class NhanVienController {
     @Autowired
     NhanVienServiceIMPL nhanVienServiceIMPL;
 
     @GetMapping("/nhan-vien")
-    public String nhanVienHome(Model model) {
-        List<NhanVien> list = nhanVienServiceIMPL.getAll();
-        model.addAttribute("list", list);
-        return "/nhanVien/index";
+    public List<NhanVien> nhanVienHome() {
+        return nhanVienServiceIMPL.getAll();
     }
 
     @GetMapping("/nhan-vien/view-add")
