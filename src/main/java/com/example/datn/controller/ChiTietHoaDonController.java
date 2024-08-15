@@ -37,7 +37,7 @@ public class ChiTietHoaDonController {
     }
     @ModelAttribute("listPhong")
     List<Phong> getAllPhong() {
-        return phongServiceIMPL.findAll();
+        return phongServiceIMPL.getAll();
     }
 
 
