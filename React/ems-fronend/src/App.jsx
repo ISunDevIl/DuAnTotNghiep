@@ -1,24 +1,27 @@
+import './App.css';
+import HeaderComponents from './components/HeaderComponents';
+import SlideBar from './components/Slidebar';
+import TableDichVu from './components/tableDichVu';
+import TableNhanVien from './components/tableNhanVien';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import './App.css'
-import HeaderComponents from './components/HeaderComponents'
-import TableDichVu from './components/tableDichVu'
-import TableNhanVien from './components/tableNhanVien'
-import {BrowserRouter,Routes, Route} from 'react-router-dom'
 function App() {
-
   return (
-    <>
-      <BrowserRouter>
-        <HeaderComponents />
-        <Routes>
-          {/* // http://localhost:3000/DichVu */}
-          <Route path="/DichVu" element={<TableDichVu />} />
-          {/* // http://localhost:3000/NhanVien */}
-          <Route path="/NhanVien" element={<TableNhanVien />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+    <BrowserRouter>
+      <div className="app-container">
+        <SlideBar />
+        
+        <div className="main-content">
+          <HeaderComponents />
+          
+          <Routes>
+            <Route path="/DichVu" element={<TableDichVu />} />
+            <Route path="/NhanVien" element={<TableNhanVien />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
