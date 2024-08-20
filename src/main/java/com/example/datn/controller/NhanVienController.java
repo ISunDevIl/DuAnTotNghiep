@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@CrossOrigin
 @RestController
 public class NhanVienController {
     @Autowired
@@ -41,7 +41,6 @@ public class NhanVienController {
         model.addAttribute("nvdetail", nhanVienDetail);
         return "/nhanVien/update";
     }
-
     @PostMapping("/nhan-vien/update")
     public String update(@ModelAttribute("nhanVien") NhanVien nhanVien) {
         nhanVienServiceIMPL.updateNhanVien(nhanVien);
