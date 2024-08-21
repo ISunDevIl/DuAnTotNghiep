@@ -87,6 +87,7 @@
             <td>${s.tenDichVu}</td>
             <td>${s.donGia}</td>
             <td>${s.moTa}</td>
+
             <td>${s.trangThai}</td>
             <td>
                 <a href="/dich_vu/detail?id=${s.id}" class="btn btn-success">Chi tiết</a>
