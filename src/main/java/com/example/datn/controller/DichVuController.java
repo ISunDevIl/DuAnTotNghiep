@@ -8,10 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Controller
+@CrossOrigin
+@RestController
 @RequestMapping("/dich_vu")
 public class DichVuController {
 
@@ -19,9 +24,13 @@ public class DichVuController {
     DichVuServiceIMPL dichVuServiceIMPL;
 
     @GetMapping("/home/{id}")
-    public String home(Model model){
-        model.addAttribute("list",dichVuServiceIMPL.getAll());
+    public String home(Model model) {
+        model.addAttribute("list", dichVuServiceIMPL.getAll());
         return "/DichVu/home";
+    }
+    @GetMapping("/home")
+    public List<DichVu> home(){
+        return dichVuServiceIMPL.getAll();
     }
 
     @PostMapping("/image/{id}")
@@ -29,5 +38,4 @@ public class DichVuController {
         this.dichVuServiceIMPL.uploadImage(id, file);
         return ResponseEntity.ok("Upload file successfully");
     }
-
 }
