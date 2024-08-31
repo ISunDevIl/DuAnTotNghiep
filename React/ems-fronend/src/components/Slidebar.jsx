@@ -1,32 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toggleSubmenu } from '../assets/Slidebar';
+import '../assets/Slidebar.css'; // File CSS cho sidebar
 
-import '../assets/Slidebar.css';
-const SlideBar = () => {
+function Sidebar() {
+    const [activeSubmenu, setActiveSubmenu] = useState(null);
     return (
-
-        <div class="sidebar">
-            <ul>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/DichVu">Trang chủ</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/DichVu">Dịch vụ</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/DichVu">Hóa đơn</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/NhanVien">Nhân viên</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/DichVu">Khách hàng</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/DichVu">Đăng xuất</Link>
-                </li>
-            </ul>
-        </div>
-    );
+        <div className="sidebar">
+      <ul>
+        <li className="nav-item">
+          <Link className="nav-link" to="/TrangChu">Trang chủ</Link>
+        </li>
+        {/* Quản lý phòng với submenu */}
+        <li 
+          className={`nav-item has-submenu ${activeSubmenu === 1 ? 'active' : ''}`} 
+          onClick={() => toggleSubmenu(1, activeSubmenu, setActiveSubmenu)}
+        >
+          <Link className="nav-link" to="#">Quản lý phòng</Link>
+          <ul className="submenu">
+            <li className="nav-item">
+              <Link className="nav-link" to="/PhongDanhSach">Quản lý phòng</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/PhongThue">Loại phòng</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/PhongThem">Tiện nghi phòng</Link>
+            </li>
+          </ul>
+        </li>
+        <li className={`dv ${activeSubmenu === 1 ? 'active' : ''}`} >
+          <Link className="nav-link" to="/DichVu">Dịch vụ</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/HoaDon">Hóa đơn</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/NhanVien">Nhân viên</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/KhachHang">Khách hàng</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/DangXuat">Đăng xuất</Link>
+        </li>
+      </ul>
+    </div>
+  );
 }
-export default SlideBar
+
+export default Sidebar;

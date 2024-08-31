@@ -1,32 +1,53 @@
-
-.sidebar {
-    position: absolute;
-    height: 100vh;
-    width: 250px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-
-
-
-
-.sidebar ul li{
-
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .sidebar ul li ,.dv{
     font-size: 20px;
-    text-decoration: none;
-
-    position: relative;
-    list-style-type: none;
     height: 50px;
-    width: 90%;
     margin: 0.8rem auto;
     line-height: 50px;
-    right: 10px;
-}
-/* create envent hover for li */
-.sidebar ul li:hover{
-    background-color: #f0f0f0;
-}
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+    position: relative; /* Để submenu có thể được định vị */
+    
+  }
+  .sidebar ul li:hover{
+    background-color: #5786e6;
+  }
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #101828;
+    display: block;
+    padding-left: 20px;
+  }
+  
+  .submenu {
+    display: none; /* Ẩn submenu mặc định */
+    padding-left: 20px;
+    position: relative; /* Đảm bảo submenu được hiển thị trong cùng khu vực */
+    background-color: #f0f0f0; /* Màu nền cho submenu */
+  }
+  
+  .nav-item.has-submenu.active .submenu {
+    display: block; /* Hiển thị submenu khi mục cha có lớp active */
+  }
+  
+  .submenu li {
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  .submenu li a {
+    font-size: 17px;
+  }
+  
+  /* Đảm bảo các mục li có đủ khoảng cách giữa các mục để submenu không bị đè lên */
 
-
+  .dv.active{
+    margin-top: 190px;
+  }
+  
