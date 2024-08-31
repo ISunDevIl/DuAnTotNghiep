@@ -1,19 +1,22 @@
 import './App.css';
-import HeaderComponents from './components/HeaderComponents';
+import Header from './components/Header';
 import SlideBar from './components/Slidebar';
 import TableDichVu from './components/tableDichVu';
 import TableNhanVien from './components/tableNhanVien';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 function App() {
   return (
     <BrowserRouter>
       <div className="app-container">
-        <SlideBar />
-        
+
+        <div className="slidebar">
+          <SlideBar />
+        </div>
+
         <div className="main-content">
-          <HeaderComponents />
-          
+          <div className="header">
+            <Header />
+          </div>
           <Routes>
             <Route path="/DichVu" element={<TableDichVu />} />
             <Route path="/NhanVien" element={<TableNhanVien />} />
@@ -23,5 +26,6 @@ function App() {
     </BrowserRouter>
   );
 }
+
 
 export default App;
