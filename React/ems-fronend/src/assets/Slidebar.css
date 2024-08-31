@@ -3,17 +3,30 @@
     position: absolute;
     height: 100vh;
     width: 250px;
-    background-color:  black;
-    
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
 
 
 
+.sidebar ul li{
 
-.sidebar ul {
+    font-size: 20px;
+    text-decoration: none;
+
     position: relative;
-    background-color: red;
-    color: blue;
+    list-style-type: none;
+    height: 50px;
+    width: 90%;
+    margin: 0.8rem auto;
+    line-height: 50px;
+    right: 10px;
 }
+/* create envent hover for li */
+.sidebar ul li:hover{
+    background-color: #f0f0f0;
+}
+
+

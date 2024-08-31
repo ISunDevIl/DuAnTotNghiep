@@ -1,10 +1,10 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/Header.css';
-const HeaderComponents = () => {    
+const HeaderComponents = () => {
     return (
         <header className="navbar">
-            <div className="navbar-brand">Logo</div>
+            <button className="navbar-item">Button</button>
                 <ul className="navbar-navbar">
                     <li className="navbar-item">
                         <Link className="navbar-link" to="#">Trang chủ</Link>
@@ -19,6 +19,7 @@ const HeaderComponents = () => {
         </header>
 
     );
+
 }
 
 export default HeaderComponents;
