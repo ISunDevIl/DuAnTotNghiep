@@ -19,13 +19,13 @@ function Sidebar() {
           <Link className="nav-link" to="#">Quản lý phòng</Link>
           <ul className="submenu">
             <li className="nav-item">
-              <Link className="nav-link" to="/PhongDanhSach">Quản lý phòng</Link>
+              <Link className="nav-link" to="/QuanLyPhong">Quản lý phòng</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/PhongThue">Loại phòng</Link>
+              <Link className="nav-link" to="/LoaiPhong">Loại phòng</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/PhongThem">Tiện nghi phòng</Link>
+              <Link className="nav-link" to="/TienNghi">Tiện nghi phòng</Link>
             </li>
           </ul>
         </li>
