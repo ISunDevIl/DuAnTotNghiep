@@ -39,17 +39,37 @@ public class PhongServiceIMPL implements PhongService {
 
     }
 
+
+
+    //
+//    @Override
+//    public void updateStatusPhong(Integer id) {
+//        Phong phong = phongRepo.findById(id).orElse(null);
+//        if (phong != null) {
+//            if (phong.getTrangThai().equals("Không trống")){
+//                phong.setTrangThai("Trống");
+//            }else {
+//                phong.setTrangThai("Không trống");
+//            }
+//            phongRepo.save(phong);
+//        }
+//
+//    }
     @Override
     public void updateStatusPhong(Integer id) {
         Phong phong = phongRepo.findById(id).orElse(null);
         if (phong != null) {
-            if (phong.getTrangThai().equals("Không trống")){
-                phong.setTrangThai("Trống");
+            if (phong.getTrangThai().equals("Hoạt động")){
+                phong.setTrangThai("Không hoạt động");
             }else {
-                phong.setTrangThai("Không trống");
+                phong.setTrangThai("Hoạt động");
             }
             phongRepo.save(phong);
         }
 
+    }
+    @Override
+    public List<Phong> findByLoaiPhong(Integer id) {
+        return phongRepo.findPhongsByLoaiPhong_Id(id);
     }
 }
