@@ -20,6 +20,10 @@ public class Phong {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @JoinColumn(name = "id_loai_phong")
+    @ManyToOne
+    private LoaiPhong loaiPhong;
+
     @Column(name = "ma_phong")
     private String maPhong;
 

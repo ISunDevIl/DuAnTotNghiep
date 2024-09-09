@@ -1,5 +1,6 @@
 package com.example.datn.service;
 
+import com.example.datn.model.NhanVien;
 import com.example.datn.model.Phong;
 
 import com.example.datn.repository.PhongRepo;
@@ -18,6 +19,8 @@ public interface PhongService {
     public void updateStatusPhong(Integer id);
 
     public void update(Phong phong);
+
+    public List<Phong> findByLoaiPhong(Integer id);
 
 
 }

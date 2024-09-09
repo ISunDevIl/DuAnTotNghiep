@@ -20,9 +20,7 @@ public class LoaiPhong {
     private Integer id;
 
 
-    @ManyToOne
-    @JoinColumn(name = "id_phong")
-    private Phong phong;
+
 
     @Column(name = "ma_loai_phong")
     private String maLoaiPhong;
