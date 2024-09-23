@@ -9,11 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface NhanVienRepo extends JpaRepository<NhanVien, Integer> {
+public interface NhanVienRepository extends JpaRepository<NhanVien, Integer> {
     @Query("SELECT nv FROM NhanVien nv " +
-            "WHERE nv.maNhanVien LIKE %:keyword% " +
-            "OR nv.hoTen LIKE %:keyword% " +
-            "OR nv.gioiTinh LIKE %:keyword% " +
+            "WHERE nv.gioiTinh LIKE %:keyword% " +
             "OR nv.email LIKE %:keyword% " +
             "OR nv.sdt LIKE %:keyword% " +
             "OR nv.trangThai LIKE %:keyword% "

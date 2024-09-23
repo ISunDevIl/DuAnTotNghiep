@@ -1,7 +1,7 @@
 package com.example.datn.controller;
 
 import com.example.datn.model.TienIch;
-import com.example.datn.service.IMPL.TienNghiServiceIMPL;
+import com.example.datn.service.IMPL.TienIchServiceIMPL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.util.List;
 public class TienNghiController {
 
     @Autowired
-    TienNghiServiceIMPL tienNghiServiceIMPL;
+    TienIchServiceIMPL tienNghiServiceIMPL;
     @GetMapping("/home")
     public List<TienIch> home(){
         return tienNghiServiceIMPL.getAll();
@@ -43,11 +43,5 @@ public class TienNghiController {
         tienNghiServiceIMPL.update(tienIch);
         return "redirect:/tien-nghi/home";
     }
-    @GetMapping("/update-status")
-    public String update(@RequestParam("id") int id){
-        TienIch tn1 = tienNghiServiceIMPL.detail(id);
-        tn1.setTrangThai("Ngừng hoạt động");
-        tienNghiServiceIMPL.update(tn1);
-        return "redirect:/tien-nghi/home";
-    }
+
 }

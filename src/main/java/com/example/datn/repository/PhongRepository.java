@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PhongRepo extends JpaRepository<Phong,Integer> {
+public interface PhongRepository extends JpaRepository<Phong,Integer> {
     @Query(value = "select * from phong where id_loai_phong = 4", nativeQuery = true)
     List<Phong> findByLoaiPhong();
 

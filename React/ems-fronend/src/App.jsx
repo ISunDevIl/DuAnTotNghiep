@@ -4,6 +4,7 @@ import SlideBar from './components/Slidebar';
 import TableDichVu from './components/tableDichVu';
 import TableNhanVien from './components/tableNhanVien';
 import TienNghi from './components/TienNghi';
+import BookingForm from './components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <div className="main-content">
           <div className="header">
             <Header />
+          </div>
+          <div className="content">
+            <BookingForm />
           </div>
           <Routes>
             <Route path="/DichVu" element={<TableDichVu />} />

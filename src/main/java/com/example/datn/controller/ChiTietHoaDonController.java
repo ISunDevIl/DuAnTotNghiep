@@ -4,7 +4,7 @@ import com.example.datn.model.ThongTinDatPhong;
 import com.example.datn.model.HoaDon;
 import com.example.datn.model.PhieuDichVu;
 import com.example.datn.model.Phong;
-import com.example.datn.service.IMPL.ChiTietHoaDonServiceIMPL;
+import com.example.datn.service.IMPL.ThongTinDatPhongServiceIMPL;
 import com.example.datn.service.IMPL.HoaDonServiceIMPL;
 import com.example.datn.service.IMPL.PhieuDichVuServiceIMPL;
 import com.example.datn.service.IMPL.PhongServiceIMPL;
@@ -20,7 +20,7 @@ import java.util.List;
 public class ChiTietHoaDonController {
 
     @Autowired
-    ChiTietHoaDonServiceIMPL chiTietHoaDonServiceIMPL;
+    ThongTinDatPhongServiceIMPL chiTietHoaDonServiceIMPL;
     @Autowired
     PhieuDichVuServiceIMPL phieuDichVuServiceIMPL;
     @Autowired

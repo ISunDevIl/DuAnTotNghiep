@@ -4,7 +4,7 @@ import com.example.datn.model.TienIch;
 
 import java.util.List;
 
-public interface TienNghiService {
+public interface TienIchService {
     List<TienIch> getAll();
 
     public void add(TienIch tienIch);
