@@ -1,18 +1,17 @@
 package com.example.datn.service;
 
-import com.example.datn.model.DichVu;
-import com.example.datn.model.TienNghi;
+import com.example.datn.model.TienIch;
 
 import java.util.List;
 
 public interface TienNghiService {
-    List<TienNghi> getAll();
+    List<TienIch> getAll();
 
-    public void add(TienNghi tienNghi);
+    public void add(TienIch tienIch);
 
-    public TienNghi detail(Integer id);
+    public TienIch detail(Integer id);
 
     public void delete(Integer id);
 
-    public void update(TienNghi tienNghi);
+    public void update(TienIch tienIch);
 }

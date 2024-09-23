@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 
 @Entity
-@Table(name = "LoaiPhong")
+@Table(name = "loai_phong")
 public class LoaiPhong {
 
     @Id
@@ -20,26 +20,22 @@ public class LoaiPhong {
     private Integer id;
 
 
-
-
-    @Column(name = "ma_loai_phong")
-    private String maLoaiPhong;
     @Column(name = "ten_loai_phong")
     private String tenLoaiPhong;
 
-    @Column(name = "suc_chua")
-    private Integer sucChua;
+    @Column(name = "dien_tich")
+    private Integer dienTich;
 
-    @Column(name = "gia_theo_gio")
-    private Double giaTheoGio;
+    @Column(name = "suc_chua_lon")
+    private Integer sucChuaLon;
 
-    @Column(name = "gia_qua_dem")
-    private Double giaQuaDem;
-    @Column(name = "hinh_anh")
-    private String hinhAnh;
+    @Column(name = "suc_chua_nho")
+    private Integer sucChuaNho;
+    @Column(name = "gia_phong")
+    private Double giaPhong;
 
-    @Column(name = "ghi_chu")
-    private String ghiChu;
+    @Column(name = "mo_ta")
+    private String moTa;
 
     @Column(name = "trang_thai")
     private String trangThai;

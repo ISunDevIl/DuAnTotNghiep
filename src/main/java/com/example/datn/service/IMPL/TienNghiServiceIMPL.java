@@ -1,7 +1,6 @@
 package com.example.datn.service.IMPL;
 
-import com.example.datn.model.DichVu;
-import com.example.datn.model.TienNghi;
+import com.example.datn.model.TienIch;
 import com.example.datn.repository.TienNghiRepository;
 import com.example.datn.service.TienNghiService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,17 +14,17 @@ public class TienNghiServiceIMPL implements TienNghiService {
     TienNghiRepository tienNghiRepository;
 
     @Override
-    public List<TienNghi> getAll() {
+    public List<TienIch> getAll() {
         return tienNghiRepository.findAll();
     }
 
     @Override
-    public void add(TienNghi tienNghi) {
-        tienNghiRepository.save(tienNghi);
+    public void add(TienIch tienIch) {
+        tienNghiRepository.save(tienIch);
     }
 
     @Override
-    public TienNghi detail(Integer id) {
+    public TienIch detail(Integer id) {
         return tienNghiRepository.findById(id).get();
     }
 
@@ -35,7 +34,7 @@ public class TienNghiServiceIMPL implements TienNghiService {
     }
 
     @Override
-    public void update(TienNghi tienNghi) {
-        tienNghiRepository.save(tienNghi);
+    public void update(TienIch tienIch) {
+        tienNghiRepository.save(tienIch);
     }
 }
