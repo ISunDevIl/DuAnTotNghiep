@@ -1,9 +1,8 @@
 package com.example.datn.service.IMPL;
 
-import com.example.datn.model.ChiTietHoaDon;
+import com.example.datn.model.ThongTinDatPhong;
 import com.example.datn.repository.ChiTietHoaDonRepo;
 import com.example.datn.service.ChiTietHoaDonService;
-import com.example.datn.service.HoaDonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,28 +15,28 @@ public class ChiTietHoaDonServiceIMPL implements ChiTietHoaDonService {
     ChiTietHoaDonRepo chiTietHoaDonRepo;
 
     @Override
-    public List<ChiTietHoaDon> findAll() {
+    public List<ThongTinDatPhong> findAll() {
         return chiTietHoaDonRepo.findAll();
     }
 
     @Override
-    public void add(ChiTietHoaDon chiTietHoaDon) {
-        chiTietHoaDonRepo.save(chiTietHoaDon);
+    public void add(ThongTinDatPhong thongTinDatPhong) {
+        chiTietHoaDonRepo.save(thongTinDatPhong);
     }
 
     @Override
-    public ChiTietHoaDon detail(Integer id) {
+    public ThongTinDatPhong detail(Integer id) {
         return chiTietHoaDonRepo.findById(id).get();
     }
 
     @Override
-    public void update(ChiTietHoaDon chiTietHoaDon) {
-        chiTietHoaDonRepo.save(chiTietHoaDon);
+    public void update(ThongTinDatPhong thongTinDatPhong) {
+        chiTietHoaDonRepo.save(thongTinDatPhong);
     }
 
     @Override
-    public ChiTietHoaDon delete(Integer id) {
-        Optional<ChiTietHoaDon> chiTietHoaDon = chiTietHoaDonRepo.findById(id);
+    public ThongTinDatPhong delete(Integer id) {
+        Optional<ThongTinDatPhong> chiTietHoaDon = chiTietHoaDonRepo.findById(id);
         if (chiTietHoaDon.isPresent()){
             chiTietHoaDonRepo.delete(chiTietHoaDon.get());
             return chiTietHoaDon.get();

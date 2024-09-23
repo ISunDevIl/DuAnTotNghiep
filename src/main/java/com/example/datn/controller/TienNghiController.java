@@ -1,10 +1,8 @@
 package com.example.datn.controller;
 
-import com.example.datn.model.TienNghi;
+import com.example.datn.model.TienIch;
 import com.example.datn.service.IMPL.TienNghiServiceIMPL;
-import com.example.datn.service.TienNghiService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,13 +16,13 @@ public class TienNghiController {
     @Autowired
     TienNghiServiceIMPL tienNghiServiceIMPL;
     @GetMapping("/home")
-    public List<TienNghi> home(){
+    public List<TienIch> home(){
         return tienNghiServiceIMPL.getAll();
     }
 
     @PostMapping("/add")
-    public String add(TienNghi tienNghi){
-        tienNghiServiceIMPL.add(tienNghi);
+    public String add(TienIch tienIch){
+        tienNghiServiceIMPL.add(tienIch);
         return "redirect:/tien-nghi/home";
     }
 
@@ -41,13 +39,13 @@ public class TienNghiController {
     }
 
     @PostMapping("/update")
-    public String update(TienNghi tienNghi){
-        tienNghiServiceIMPL.update(tienNghi);
+    public String update(TienIch tienIch){
+        tienNghiServiceIMPL.update(tienIch);
         return "redirect:/tien-nghi/home";
     }
     @GetMapping("/update-status")
     public String update(@RequestParam("id") int id){
-        TienNghi tn1 = tienNghiServiceIMPL.detail(id);
+        TienIch tn1 = tienNghiServiceIMPL.detail(id);
         tn1.setTrangThai("Ngừng hoạt động");
         tienNghiServiceIMPL.update(tn1);
         return "redirect:/tien-nghi/home";

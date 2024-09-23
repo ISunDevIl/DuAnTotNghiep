@@ -10,25 +10,20 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-
 @Entity
-@Table(name = "TienNghi")
-public class TienNghi {
+@Table(name = "dich_vu_di_kem")
+public class DichVuDiKem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "ma_tien_nghi")
-    private String maTienNghi;
+    @ManyToOne
+    @JoinColumn(name = "id_dich_vu")
+    private DichVu dichVu;
 
-    @Column(name = "ten_tien_nghi")
-    private String tenTienNghi;
-
-    @Column(name = "so_luong_ton")
-    private Integer soLuongTon;
-
-    @Column(name = "don_gia")
-    private Double donGia;
+    @ManyToOne
+    @JoinColumn(name = "id_loai_phong")
+    private LoaiPhong loaiPhong;
 
     @Column(name = "trang_thai")
     private String trangThai;
