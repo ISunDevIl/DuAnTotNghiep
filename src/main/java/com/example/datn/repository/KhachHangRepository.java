@@ -9,9 +9,7 @@ import java.util.List;
 
 public interface KhachHangRepository extends JpaRepository<KhachHang,Integer> {
     @Query("SELECT kh FROM KhachHang kh " +
-            "WHERE kh.hoTen LIKE %:keyword% " +
-            "OR kh.gioiTinh LIKE %:keyword% " +
-            "OR kh.diaChi LIKE %:keyword% " +
+            "WHERE kh.gioiTinh LIKE %:keyword% " +
             "OR kh.sdt LIKE %:keyword% " +
             "OR kh.email LIKE %:keyword% " +
             "OR kh.trangThai LIKE %:keyword% "

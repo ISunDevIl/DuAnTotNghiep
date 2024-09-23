@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface ChiTietHoaDonService {
+public interface ThongTinDatPhongService {
     List<ThongTinDatPhong> findAll();
     public void add(ThongTinDatPhong thongTinDatPhong);
     public ThongTinDatPhong detail(Integer id);

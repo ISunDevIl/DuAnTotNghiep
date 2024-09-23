@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface PhieuDatPhongRepository extends JpaRepository<DatPhong, Integer>{
+public interface DatPhongRepository extends JpaRepository<DatPhong, Integer>{
     List<DatPhong> getPhieuDatPhongByMaDatPhong(String ma);
 }

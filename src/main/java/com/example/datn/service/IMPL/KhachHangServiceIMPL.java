@@ -1,9 +1,7 @@
 package com.example.datn.service.IMPL;
 
 import com.example.datn.model.KhachHang;
-import com.example.datn.model.NhanVien;
 import com.example.datn.repository.KhachHangRepository;
-import com.example.datn.repository.NhanVienRepo;
 import com.example.datn.service.KhachHangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
