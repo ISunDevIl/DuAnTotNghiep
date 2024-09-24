@@ -1,10 +1,10 @@
 package com.example.datn.controller;
 
-import com.example.datn.model.ChiTietHoaDon;
+import com.example.datn.model.ThongTinDatPhong;
 import com.example.datn.model.HoaDon;
 import com.example.datn.model.PhieuDichVu;
 import com.example.datn.model.Phong;
-import com.example.datn.service.IMPL.ChiTietHoaDonServiceIMPL;
+import com.example.datn.service.IMPL.ThongTinDatPhongServiceIMPL;
 import com.example.datn.service.IMPL.HoaDonServiceIMPL;
 import com.example.datn.service.IMPL.PhieuDichVuServiceIMPL;
 import com.example.datn.service.IMPL.PhongServiceIMPL;
@@ -20,7 +20,7 @@ import java.util.List;
 public class ChiTietHoaDonController {
 
     @Autowired
-    ChiTietHoaDonServiceIMPL chiTietHoaDonServiceIMPL;
+    ThongTinDatPhongServiceIMPL chiTietHoaDonServiceIMPL;
     @Autowired
     PhieuDichVuServiceIMPL phieuDichVuServiceIMPL;
     @Autowired
@@ -43,33 +43,33 @@ public class ChiTietHoaDonController {
 
     @GetMapping("")
     public String chiTietHoaDonIndex(Model model){
-        List<ChiTietHoaDon> list = chiTietHoaDonServiceIMPL.findAll();
+        List<ThongTinDatPhong> list = chiTietHoaDonServiceIMPL.findAll();
         model.addAttribute("list", list);
         return "/cthd/index";
     }
 
     @GetMapping("/view-add")
     public String viewAddCTHD(Model model){
-        model.addAttribute("chiTietHoaDon", new ChiTietHoaDon());
+        model.addAttribute("chiTietHoaDon", new ThongTinDatPhong());
         return "/cthd/add";
     }
 
     @PostMapping("/add")
-    public String addCTHD(@ModelAttribute("chiTietHoaDon") ChiTietHoaDon chiTietHoaDon){
-        chiTietHoaDonServiceIMPL.add(chiTietHoaDon);
+    public String addCTHD(@ModelAttribute("chiTietHoaDon") ThongTinDatPhong thongTinDatPhong){
+        chiTietHoaDonServiceIMPL.add(thongTinDatPhong);
         return "redirect:/chi-tiet-hoa-don";
     }
 
     @GetMapping("/detail/{id}")
     public String deltaiCTHD(@PathVariable("id") Integer id, Model model){
-        ChiTietHoaDon chiTietHoaDonDetail = chiTietHoaDonServiceIMPL.detail(id);
-        model.addAttribute("cthdDetail", chiTietHoaDonDetail);
+        ThongTinDatPhong thongTinDatPhongDetail = chiTietHoaDonServiceIMPL.detail(id);
+        model.addAttribute("cthdDetail", thongTinDatPhongDetail);
         return "/cthd/update";
     }
 
     @PostMapping("/update")
-    public String updateCTHD(@ModelAttribute("chiTietHoaDon") ChiTietHoaDon chiTietHoaDon){
-        chiTietHoaDonServiceIMPL.update(chiTietHoaDon);
+    public String updateCTHD(@ModelAttribute("chiTietHoaDon") ThongTinDatPhong thongTinDatPhong){
+        chiTietHoaDonServiceIMPL.update(thongTinDatPhong);
         return "redirect:/chi-tiet-hoa-don";
     }
 

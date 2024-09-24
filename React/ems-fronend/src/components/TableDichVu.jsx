@@ -14,7 +14,6 @@ const TableDichVu = () => {
     )
     return (
         <div class="container">
-            <h2>Table DV</h2>
             <table class="table">
             <thead>
                 <tr>    

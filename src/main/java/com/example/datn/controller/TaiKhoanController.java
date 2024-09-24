@@ -2,9 +2,8 @@ package com.example.datn.controller;
 
 import com.example.datn.model.NhanVien;
 import com.example.datn.model.TaiKhoan;
-import com.example.datn.service.IMPL.NhanVienServiceIMPL;
+import com.example.datn.repository.NhanVienRepository;
 import com.example.datn.service.IMPL.TaiKhoanServiceIMPL;
-import com.example.datn.service.TaiKhoanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +17,11 @@ public class TaiKhoanController {
     @Autowired
     TaiKhoanServiceIMPL taiKhoanServiceIMPL;
     @Autowired
-    NhanVienServiceIMPL nhanVienServiceIMPL;
+    NhanVienRepository nhanVienRepository;
 
     @ModelAttribute("listNhanVien")
     List<NhanVien> getListNhanVien() {
-        return nhanVienServiceIMPL.getAll();
+        return nhanVienRepository.findAll();
     }
 
     @GetMapping("")

@@ -41,24 +41,24 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${list}" var="phieuDatPhong" varStatus="i">
+    <c:forEach items="${list}" var="datPhong" varStatus="i">
         <tr>
-            <td>${phieuDatPhong.id}</td>
-            <td>${phieuDatPhong.khachHang.hoTen}</td>
-            <td>${phieuDatPhong.loaiPhong.tenLoaiPhong}</td>
-            <td>${phieuDatPhong.maDatPhong}</td>
-            <td>${phieuDatPhong.thoiGianDat}</td>
-            <td>${phieuDatPhong.thoiGianVaoDuKien}</td>
-            <td>${phieuDatPhong.thoiGianRaDuKien}</td>
-            <td>${phieuDatPhong.soNguoi}</td>
-            <td>${phieuDatPhong.soPhong}</td>
-            <td>${phieuDatPhong.trangThai}</td>
+            <td>${datPhong.id}</td>
+            <td>${datPhong.khachHang.hoTen}</td>
+            <td>${datPhong.loaiPhong.tenLoaiPhong}</td>
+            <td>${datPhong.maDatPhong}</td>
+            <td>${datPhong.thoiGianDat}</td>
+            <td>${datPhong.thoiGianVaoDuKien}</td>
+            <td>${datPhong.thoiGianRaDuKien}</td>
+            <td>${datPhong.soNguoi}</td>
+            <td>${datPhong.soPhong}</td>
+            <td>${datPhong.trangThai}</td>
             <td>
                 <form action="/phieu-dat-phong/detail" method="post">
-                    <input type="hidden" name="id" value="${phieuDatPhong.id}">
+                    <input type="hidden" name="id" value="${datPhong.id}">
                     <button type="submit" class="btn btn-info">Chi tiết</button>
                 </form>
-                <a href="/phieu-dat-phong/delete?id=${phieuDatPhong.id}" class="btn btn-danger">Xóa</a>
+                <a href="/phieu-dat-phong/delete?id=${datPhong.id}" class="btn btn-danger">Xóa</a>
             </td>
         </tr>
     </c:forEach>
@@ -77,14 +77,14 @@
             <div class="modal-body">
                 <form id="idFormUpdate" action="/phieu-dat-phong/update" method="post">
                     <!-- ID ẩn để xác định bản ghi cần cập nhật -->
-                    <input type="hidden" name="id" value="${phieuDatPhong.id}">
+                    <input type="hidden" name="id" value="${datPhong.id}">
 
                     <div class="mb-3">
                         <label>Tên khách hàng</label>
                         <select name="khachHang" class="form-control">
                             <c:forEach items="${listKhachHang}" var="kh">
                                 <option value="${kh.id}"
-                                        <c:if test="${phieuDatPhong.khachHang.id == kh.id}">
+                                        <c:if test="${datPhong.khachHang.id == kh.id}">
                                             selected
                                         </c:if>
                                 >${kh.hoTen}</option>
@@ -97,7 +97,7 @@
                         <select name="loaiPhong" class="form-control">
                             <c:forEach items="${listLoaiPhong}" var="lp">
                                 <option value="${lp.id}"
-                                        <c:if test="${phieuDatPhong.loaiPhong.id == lp.id}">
+                                        <c:if test="${datPhong.loaiPhong.id == lp.id}">
                                             selected
                                         </c:if>
                                 >${lp.tenLoaiPhong}</option>
@@ -107,7 +107,7 @@
 
                     <div class="mb-3">
                         <label>Mã đặt phòng</label>
-                        <input type="text" class="form-control" name="maDatPhong" value="${phieuDatPhong.maDatPhong}">
+                        <input type="text" class="form-control" name="maDatPhong" value="${datPhong.maDatPhong}">
                     </div>
 
                     <div class="mb-3">
@@ -122,16 +122,16 @@
 
                     <div class="mb-3">
                         <label>Số người</label>
-                        <input type="number" class="form-control" name="soNguoi" value="${phieuDatPhong.soNguoi}">
+                        <input type="number" class="form-control" name="soNguoi" value="${datPhong.soNguoi}">
                     </div>
 
                     <div class="mb-3">
                         <label>Số phòng</label>
-                        <input type="number" class="form-control" name="soPhong" value="${phieuDatPhong.soPhong}">
+                        <input type="number" class="form-control" name="soPhong" value="${datPhong.soPhong}">
                     </div>
                     <div class="mb-3">
                         <label>Thời gian đặt</label>
-                        <input type="text" class="form-control" name="thoiGianDat" value="${phieuDatPhong.thoiGianDat}"  readonly>
+                        <input type="text" class="form-control" name="thoiGianDat" value="${datPhong.thoiGianDat}"  readonly>
                     </div>
                     <div class="mb-3">
                         <label>Trạng thái</label>
@@ -151,7 +151,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var hasDetails = ${not empty phieuDatPhong};
+        var hasDetails = ${not empty datPhong};
         if (hasDetails) {
             var modal = new bootstrap.Modal(document.getElementById('detailModal'), {});
             modal.show();

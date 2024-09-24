@@ -14,6 +14,7 @@
 <body>
 
     <c:forEach items="${listLoaiPhong}" varStatus="i" var="lp">
+        
     <div style="display: flex;flex-direction: column;align-items: center;gap: 50px;padding-top: 50px;">
         <div style="width: 1200px;padding: 20px;border: 1px solid #ccc; border-radius: 5px;">
             <h1>${lp.tenLoaiPhong}</h1>

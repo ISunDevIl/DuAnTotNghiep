@@ -1,9 +1,6 @@
 package com.example.datn.service;
 
-import com.example.datn.model.NhanVien;
 import com.example.datn.model.Phong;
-
-import com.example.datn.repository.PhongRepo;
 
 
 import java.util.List;

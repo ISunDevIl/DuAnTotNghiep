@@ -14,7 +14,7 @@
 <body>
 <div class="row">
     <div class="col-md-8 m-3">
-        <a href="/nhan-vien/view-add" class="btn btn-success">Thêm nhân viên</a>
+        <a href="/nhan-vien/insert" class="btn btn-success">Thêm nhân viên</a>
     </div>
     <div class="col-md-3 m-3">
         <form class="d-flex" action="/nhan-vien/search" method="Get">
@@ -28,34 +28,32 @@
     <thead>
     <tr>
         <th>STT</th>
-        <th>Mã nhân viên</th>
-        <th>Họ và tên</th>
-        <th>Ngày sinh</th>
+        <th>Họ</th>
+        <th>Tên</th>
         <th>Giới tính</th>
-        <th>Địa chỉ</th>
+        <th>Quốc gia</th>
         <th>Số điện thoại</th>
         <th>Email</th>
-        <th>Chức vụ</th>
+        <th>Ngày tạo</th>
+        <th>Ngày sửa</th>
         <th>Trạng thái</th>
-        <th></th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${list}" var="nhanVien" varStatus="i">
+    <c:forEach items="${list}" var="nv" varStatus="i">
         <tr>
             <td>${i.index+1}</td>
-            <td>${nhanVien.maNhanVien}</td>
-            <td>${nhanVien.hoTen}</td>
-            <td>${nhanVien.ngaySinh}</td>
-            <td>${nhanVien.gioiTinh}</td>
-            <td>${nhanVien.diaChi}</td>
-            <td>${nhanVien.sdt}</td>
-            <td>${nhanVien.email}</td>
-            <td>${nhanVien.chucVu}</td>
-            <td>${nhanVien.trangThai}</td>
+            <td>${nv.ho}</td>
+            <td>${nv.ten}</td>
+            <td>${nv.gioiTinh}</td>
+            <td>${nv.quocGia}</td>
+            <td>${nv.sdt}</td>
+            <td>${nv.email}</td>
+            <td>${nv.ngayTao}</td>
+            <td>${nv.ngaySua}</td>
+            <td>${nv.trangThai}</td>
             <td>
-                <a class="btn btn-info" href="/nhan-vien/detail/${nhanVien.id}">Thông tin</a>
-                <a class="btn btn-danger" href="/nhan-vien/status/${nhanVien.id}">Đổi trạng thái</a>
+                <a href="/nhan-vien/delete?id=${nv.id}" class="btn btn-danger">Xóa</a>
             </td>
         </tr>
     </c:forEach>

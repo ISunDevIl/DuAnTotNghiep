@@ -1,7 +1,7 @@
 package com.example.datn.service.IMPL;
 
 import com.example.datn.model.PhieuDichVu;
-import com.example.datn.repository.PhieuDichVuRepo;
+import com.example.datn.repository.PhieuDichVuRepository;
 import com.example.datn.service.PhieuDichVuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PhieuDichVuServiceIMPL implements PhieuDichVuService {
     @Autowired
-    PhieuDichVuRepo phieuDichVuRepo;
+    PhieuDichVuRepository phieuDichVuRepo;
     @Override
     public List<PhieuDichVu> findAll() {
         return phieuDichVuRepo.findAll();

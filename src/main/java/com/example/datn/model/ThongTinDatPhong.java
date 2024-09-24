@@ -14,41 +14,37 @@ import java.time.LocalDateTime;
 @Setter
 
 @Entity
-@Table(name = "ChiTietHoaDon")
+@Table(name = "thong_tin_dat_phong")
 
-public class ChiTietHoaDon {
+public class ThongTinDatPhong {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @ManyToOne
-    @JoinColumn(name = "id_phieu_dich_vu")
-    private PhieuDichVu phieuDichVu;
 
-
-    @ManyToOne
-    @JoinColumn(name = "id_hoa_don")
-    private HoaDon hoaDon;
+    @JoinColumn(name = "id_dat_phong")
+    @ManyToOne()
+    private DatPhong datPhong;
 
     @ManyToOne
     @JoinColumn(name = "id_phong")
     private Phong phong;
 
-    @Column(name = "hinh_thuc_thue")
-    private String hinhThucThue;
 
-    @Column(name = "thoi_gian_ra")
-    private LocalDateTime thoiGianRa;
+    @Column(name = "ngay_nhan_phong")
+    private LocalDateTime ngayNhanPhong;
 
-    @Column(name = "thoi_gian_thue")
-    private LocalDateTime thoiGianThue;
+    @Column(name = "ngay_tra_phong")
+    private LocalDateTime ngayTraPhong;
 
+
+    @Column(name = "so_nguoi")
+    private Integer soNguoi;
     @Column(name = "tien_phong")
     private Double tienPhong;
 
     @Column(name = "tien_dich_vu")
     private Double tienDichVu;
 
-
-    @Column(name = "tong_tien")
-    private Double tongTien;
+    @Column(name = "trang_thai")
+    private String trangThai;
 }

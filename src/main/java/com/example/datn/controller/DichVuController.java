@@ -33,9 +33,11 @@ public class DichVuController {
         return dichVuServiceIMPL.getAll();
     }
 
+
     @PostMapping("/image/{id}")
     public ResponseEntity<?> uploadImages(@PathVariable final Integer id, @RequestParam("file") final MultipartFile file){
         this.dichVuServiceIMPL.uploadImage(id, file);
         return ResponseEntity.ok("Upload file successfully");
     }
+    
 }

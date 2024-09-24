@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 
 @Entity
-@Table(name = "HoaDon")
+@Table(name = "hoa_don")
 public class HoaDon {
 
     @Id
@@ -20,18 +22,17 @@ public class HoaDon {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "id_phieu_dat_phong")
-    private PhieuDatPhong phieuDatPhong;
-    @ManyToOne
     @JoinColumn(name = "id_tai_khoan")
     private TaiKhoan taiKhoan;
 
-    @ManyToOne
-    @JoinColumn(name = "id_khach_hang")
-    private KhachHang khachHang;
-
     @Column(name = "tong_tien")
     private Double tongTien;
+
+    @Column(name = "phuong_thuc_thanh_toan")
+    private String phuongThucThanhToan;
+
+    @Column(name = "ngay_thanh_toan")
+    private LocalDate ngayThanhToan;
 
     @Column(name = "trang_thai")
     private String trangThai;

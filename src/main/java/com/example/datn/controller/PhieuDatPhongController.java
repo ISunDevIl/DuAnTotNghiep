@@ -1,11 +1,9 @@
 package com.example.datn.controller;
 
-import com.example.datn.model.PhieuDatPhong;
-import com.example.datn.model.PhieuDichVu;
+import com.example.datn.model.DatPhong;
 import com.example.datn.repository.KhachHangRepository;
 import com.example.datn.repository.LoaiPhongRepository;
-import com.example.datn.repository.PhieuDatPhongRepository;
-import com.example.datn.repository.PhieuDichVuRepository;
+import com.example.datn.repository.DatPhongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +19,7 @@ import java.util.List;
 @Controller
 public class PhieuDatPhongController {
     @Autowired
-    PhieuDatPhongRepository phieuDatPhongRepository;
+    DatPhongRepository datPhongRepository;
     @Autowired
     KhachHangRepository khachHangRepository;
     @Autowired
@@ -30,7 +28,7 @@ public class PhieuDatPhongController {
 
     @GetMapping("/phieu-dat-phong")
     public String hienThi(Model model){
-        model.addAttribute("list", phieuDatPhongRepository.findAll());
+        model.addAttribute("list", datPhongRepository.findAll());
         return "phieu_dat_phong/index";
     }
 
@@ -41,53 +39,53 @@ public class PhieuDatPhongController {
     }
 
     @PostMapping("/phieu-dat-phong/add")
-    public String add(@ModelAttribute("phieuDatPhong") PhieuDatPhong phieuDatPhong){
-        phieuDatPhong.setThoiGianDat(LocalDateTime.now());
-        phieuDatPhongRepository.save(phieuDatPhong);
+    public String add(@ModelAttribute("phieuDatPhong") DatPhong datPhong){
+        datPhong.setThoiGianDat(LocalDateTime.now());
+        datPhongRepository.save(datPhong);
         return "redirect:/phieu-dat-phong";
     }
 
     @PostMapping("/phieu-dat-phong/detail")
     public String detail(@RequestParam("id") Integer id, Model model) {
-        PhieuDatPhong phieuDatPhong = phieuDatPhongRepository.findById(id).orElse(null);
+        DatPhong datPhong = datPhongRepository.findById(id).orElse(null);
 
-        if (phieuDatPhong == null) {
+        if (datPhong == null) {
             return "redirect:/phieu-dat-phong";
         }
 
-        model.addAttribute("phieuDatPhong", phieuDatPhong);
+        model.addAttribute("phieuDatPhong", datPhong);
         model.addAttribute("listKhachHang", khachHangRepository.findAll());
         model.addAttribute("listLoaiPhong", loaiPhongRepository.findAll());
 
         // Chuyển đổi LocalDateTime sang định dạng chuỗi để gửi đến view
         model.addAttribute("formattedThoiGianVaoDuKien",
-                (phieuDatPhong.getThoiGianVaoDuKien() != null) ?
-                        phieuDatPhong.getThoiGianVaoDuKien().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")) : "");
+                (datPhong.getThoiGianVaoDuKien() != null) ?
+                        datPhong.getThoiGianVaoDuKien().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")) : "");
 
         model.addAttribute("formattedThoiGianRaDuKien",
-                (phieuDatPhong.getThoiGianRaDuKien() != null) ?
-                        phieuDatPhong.getThoiGianRaDuKien().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")) : "");
-        model.addAttribute("list", phieuDatPhongRepository.findAll());
+                (datPhong.getThoiGianRaDuKien() != null) ?
+                        datPhong.getThoiGianRaDuKien().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")) : "");
+        model.addAttribute("list", datPhongRepository.findAll());
 
         return "phieu_dat_phong/index";
     }
 
     @PostMapping("/phieu-dat-phong/update")
-    public String update(@ModelAttribute("phieuDatPhong") PhieuDatPhong phieuDatPhong){
-        phieuDatPhong.setThoiGianDat(LocalDateTime.now());
-        phieuDatPhongRepository.save(phieuDatPhong);
+    public String update(@ModelAttribute("phieuDatPhong") DatPhong datPhong){
+        datPhong.setThoiGianDat(LocalDateTime.now());
+        datPhongRepository.save(datPhong);
         return "redirect:/phieu-dat-phong";
     }
 
     @GetMapping("/phieu-dat-phong/delete")
     public String delete(@RequestParam("id") Integer id){
-        phieuDatPhongRepository.deleteById(id);
+        datPhongRepository.deleteById(id);
         return "redirect:/phieu-dat-phong";
     }
 
     @GetMapping("/phieu_dat_phong/search")
     public String search(@RequestParam("maDatPhong") String ma, Model model){
-        List<PhieuDatPhong> listNew = phieuDatPhongRepository.getPhieuDatPhongByMaDatPhong(ma);
+        List<DatPhong> listNew = datPhongRepository.getPhieuDatPhongByMaDatPhong(ma);
         model.addAttribute("list", listNew);
         return "phieu_dat_phong/index";
     }
