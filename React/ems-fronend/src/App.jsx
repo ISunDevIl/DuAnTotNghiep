@@ -4,7 +4,8 @@ import SlideBar from './components/Slidebar';
 import TableDichVu from './components/tableDichVu';
 import TableNhanVien from './components/tableNhanVien';
 import TienNghi from './components/TienNghi';
-import BookingForm from './components/Home';
+import FormSearch from './components/Home';
+import HotelBooking from './components/BookingView';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <Header />
           </div>
           <div className="content">
-            <BookingForm />
+            <HotelBooking />
           </div>
           <Routes>
             <Route path="/DichVu" element={<TableDichVu />} />
