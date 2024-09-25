@@ -29,41 +29,41 @@ const FormSearch = () => {
                         <p>Tìm phòng phù hợp với nhu cầu của bạn</p>
                     </div>
                     <div className='form-search'>
-                    <Row>
-    <Col md={4}>
-        <FormGroup>
-            <FormControl
-                type='date'
-                name='startDate'
-                onChange={handleChange}
-            />
-        </FormGroup>
-    </Col>
-    <Col md={4}>
-        <FormGroup>
-            <FormControl
-                type='date'
-                name='endDate'
-                onChange={handleChange}
-            />
-        </FormGroup>
-    </Col>
-    <Col md={4}>
-        <FormGroup>
-            <FormControl
-                type='number'
-                placeholder='Số người'
-                name='numberOfPeople'
-                onChange={handleChange}
-                min='1'
-            />
-        </FormGroup>
-    </Col>
-    <Col>
-        <button style={{ paddingLeft: '30px', paddingRight: '30px' }} size='lg'>Tìm Kiếm</button>
-    </Col>
-</Row>
-        
+                        <Row>
+                            <Col md={4}>
+                                <FormGroup>
+                                    <FormControl
+                                        type='date'
+                                        name='startDate'
+                                        onChange={handleChange}
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Col md={4}>
+                                <FormGroup>
+                                    <FormControl
+                                        type='date'
+                                        name='endDate'
+                                        onChange={handleChange}
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Col md={4}>
+                                <FormGroup>
+                                    <FormControl
+                                        type='number'
+                                        placeholder='Số người'
+                                        name='numberOfPeople'
+                                        onChange={handleChange}
+                                        min='1'
+                                    />
+                                </FormGroup>
+                            </Col>
+                            <Col>
+                                <button style={{ paddingLeft: '30px', paddingRight: '30px' }} size='lg'>Tìm Kiếm</button>
+                            </Col>
+                        </Row>
+
 
                     </div>
                 </form>
